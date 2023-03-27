@@ -34,3 +34,5 @@ function init() {
     play();
 }
 init();
+
+// KOD TEST REJIMIDA 
