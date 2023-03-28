@@ -1,5 +1,7 @@
 const game = document.querySelector(".game");
 const gamezones = document.querySelectorAll(".gamezone");
+let arr = [];
+let count = 0;
 
 
 function rand() {
@@ -11,15 +13,24 @@ function rand() {
         setTimeout(() => {
             gamezones[random].classList.remove('active');
         }, 2000);
+
+        if(gamezones[random].classList.contains('active')){
+            count++;
+        }
     }
 }
 
 function play() {
-    gamezones.forEach(function(game){
+    gamezones.forEach(function (game) {
         game.addEventListener("click", function () {
-            if(game.classList.contains('selected')){
+            if (game.classList.contains('selected')) {
                 game.classList.add("active");
-                game.classList.add("win");
+                arr.push(game);
+
+                if (arr.length == 5) {
+                    alert("Siz G`olibsiz!");
+                    location.reload();
+                }
             }
             else {
                 alert("Siz Xato qildingiz Xotirangiz judayam past!")
@@ -30,9 +41,8 @@ function play() {
 }
 
 function init() {
-    rand()
+    rand();
     play();
 }
 init();
-
-// KOD TEST REJIMIDA 
+console.log(count);
