@@ -3,7 +3,6 @@ const gamezones = document.querySelectorAll(".gamezone");
 let arr = [];
 let count = 0;
 
-
 function rand() {
     for (let i = 0; i < 5; i++) {
         let random = Math.floor(Math.random() * gamezones.length);
