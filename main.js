@@ -1,5 +1,6 @@
 const game = document.querySelector(".game");
 const gamezones = document.querySelectorAll(".gamezone");
+
 let arr = [];
 let count = 0;
 
@@ -43,5 +44,5 @@ function init() {
     rand();
     play();
 }
+
 init();
-console.log(count);
