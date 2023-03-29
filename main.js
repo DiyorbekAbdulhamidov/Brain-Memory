@@ -5,18 +5,18 @@ let arr = [];
 let count = 0;
 
 function rand() {
+    let num = [];
     for (let i = 0; i < 5; i++) {
         let random = Math.floor(Math.random() * gamezones.length);
-        gamezones[random].classList.add('active');
-        gamezones[random].classList.add('selected');
-
-        setTimeout(() => {
-            gamezones[random].classList.remove('active');
-        }, 2000);
-
-        if(gamezones[random].classList.contains('active')){
-            count++;
+        if (!num.includes(random)) {
+            num.push(random);
+            gamezones[random].classList.add('active');
+            gamezones[random].classList.add('selected');
+            setTimeout(() => {
+                gamezones[random].classList.remove('active');
+            }, 2000);
         }
+        else i--;
     }
 }
 
